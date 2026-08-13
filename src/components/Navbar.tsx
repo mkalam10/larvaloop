@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       </header>
 
       {/* Floating iOS Dock Navigation Bar - Absolutely positioned inside the relative phone frame */}
-      <nav className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 w-[92%] max-w-[360px] pointer-events-auto">
+      <nav className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[360px] pointer-events-auto">
         <div className="bg-[#15803d]/95 backdrop-blur-xl border border-white/25 p-1 rounded-full shadow-[0_8px_24px_rgba(21,128,61,0.35)] flex items-center justify-around gap-1">
           {bottomNavItems.map((item) => {
             const Icon = item.icon;

@@ -122,7 +122,7 @@ const loadData = () => {
           - flex-1 fills all remaining vertical space in the phone frame
           - overflow-y-auto handles scrolling inside the phone screen
         */}
-        <main className="px-3.5 py-4 pb-24 bg-[#faf8f5] flex-1 overflow-y-auto relative scroll-smooth">
+        <main className="px-3.5 py-4 pb-24 bg-[#faf8f5] flex-1 min-h-0 overflow-y-auto relative z-0 scroll-smooth">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 text-[#64748b] space-y-3">
               <div className="w-8 h-8 border-4 border-[#16a34a] border-t-transparent rounded-full animate-spin"></div>
