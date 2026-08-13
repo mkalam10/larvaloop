@@ -61,7 +61,7 @@ export const CashFlowModule: React.FC<CashFlowModuleProps> = ({
             className="bg-[#22542a] hover:bg-[#2b6834] text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition"
           >
             <Plus className="w-3.5 h-3.5 stroke-[3]" />
-            <span>+ Mutasi Kas</span>
+            <span>Mutasi Kas</span>
           </button>
         </div>
 

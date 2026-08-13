@@ -87,7 +87,6 @@ export const FeedModule: React.FC<FeedModuleProps> = ({ batches, onAddFeedClick 
           Feed tracking
         </h2>
         <p className="text-xs text-[#635d4f] font-medium mt-0.5">
-          Dicatat otomatis dari scan RFID + timbangan
         </p>
       </div>
 
@@ -106,7 +105,7 @@ export const FeedModule: React.FC<FeedModuleProps> = ({ batches, onAddFeedClick 
             className="bg-[#22542a] hover:bg-[#2b6834] text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition"
           >
             <Plus className="w-3.5 h-3.5 stroke-[3]" />
-            <span>+ Catat</span>
+            <span>Catat</span>
           </button>
         </div>
       </div>

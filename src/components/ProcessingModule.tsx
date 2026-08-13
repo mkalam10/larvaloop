@@ -57,7 +57,7 @@ export const ProcessingModule: React.FC<ProcessingModuleProps> = ({
           className="bg-[#16a34a] hover:bg-[#15803d] text-white text-xs font-bold px-3 py-2 rounded-xl flex items-center gap-1 shadow-sm transition active:scale-95"
         >
           <Plus className="w-3.5 h-3.5 stroke-[3]" />
-          <span>+ Catat Panen</span>
+          <span>Catat Panen</span>
         </button>
       </div>
 
