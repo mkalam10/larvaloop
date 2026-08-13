@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { BSFBatch, CashMutation } from './types';
-import { 
-  fetchBatches, 
-  fetchCashMutationsApi 
-} from './services/api';
+import {
+  INITIAL_BATCHES,
+  INITIAL_CASH_MUTATIONS,
+} from './data/initialData';
 import { Navbar } from './components/Navbar';
 import { FeedModule } from './components/FeedModule';
 import { EnvironmentIoTModule } from './components/EnvironmentIoTModule';
@@ -20,11 +20,14 @@ import { AddCashMutationModal } from './components/modals/AddCashMutationModal';
 import { ScanQRModal } from './components/modals/ScanQRModal';
 
 export default function App() {
-  const [batches, setBatches] = useState<BSFBatch[]>([]);
-  const [cashMutations, setCashMutations] = useState<CashMutation[]>([]);
+const [batches, setBatches] = useState<BSFBatch[]>(INITIAL_BATCHES);
+
+const [cashMutations, setCashMutations] = useState<CashMutation[]>(
+  INITIAL_CASH_MUTATIONS
+);
   const [cashSummary, setCashSummary] = useState({ totalInflow: 0, totalOutflow: 0, netBalance: 0 });
   const [activeTab, setActiveTab] = useState<string>('feed'); // Default to Pakan (Feed)
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Modals state
   const [isNewBatchModalOpen, setIsNewBatchModalOpen] = useState(false);
@@ -37,18 +40,26 @@ export default function App() {
   const [selectedBatchForAction, setSelectedBatchForAction] = useState<BSFBatch | undefined>(undefined);
   const [selectedBatchForPortal, setSelectedBatchForPortal] = useState<BSFBatch | undefined>(undefined);
 
-  const loadData = async () => {
-    setLoading(true);
-    const fetchedBatches = await fetchBatches();
-    setBatches(fetchedBatches);
+const loadData = () => {
+  setBatches(INITIAL_BATCHES);
+  setCashMutations(INITIAL_CASH_MUTATIONS);
 
-    const cashRes = await fetchCashMutationsApi();
-    setCashMutations(cashRes.data);
-    setCashSummary(cashRes.summary);
+  const totalInflow = INITIAL_CASH_MUTATIONS
+    .filter((item) => item.type === 'INFLOW')
+    .reduce((sum, item) => sum + item.amountIdr, 0);
 
-    setLoading(false);
-  };
+  const totalOutflow = INITIAL_CASH_MUTATIONS
+    .filter((item) => item.type === 'OUTFLOW')
+    .reduce((sum, item) => sum + item.amountIdr, 0);
 
+  setCashSummary({
+    totalInflow,
+    totalOutflow,
+    netBalance: totalInflow - totalOutflow,
+  });
+
+  setLoading(false);
+};
   useEffect(() => {
     loadData();
 
