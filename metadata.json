@@ -1,0 +1,6 @@
+{
+  "name": "LarvaLoop Traceability",
+  "description": "Platform IoT & Immutable Ledger Traceability Ekspor Maggot/BSF & Manajemen Arus Kas Mitra Plasma",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
