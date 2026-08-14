@@ -98,7 +98,7 @@ const loadData = () => {
       - h-screen w-screen max-h-screen overflow-hidden
       - Prevents any browser-level scrollbars completely
     */
-    <div className="h-screen w-screen max-h-screen max-w-screen overflow-hidden bg-white text-[#0f381e] font-sans antialiased selection:bg-[#16a34a] selection:text-white flex items-center justify-center p-0 sm:p-4">
+    <div className="h-[100dvh] w-screen max-h-[100dvh] max-w-screen overflow-hidden bg-white text-[#0f381e] font-sans antialiased selection:bg-[#16a34a] selection:text-white flex items-center justify-center p-0 sm:p-4">
       
       {/* 
         2. SMARTPHONE MOCKUP FRAME CONTAINER
@@ -106,7 +106,7 @@ const loadData = () => {
         - Has relative positioning so floating nav docks inside it
         - Has overflow-hidden so children never spill out
       */}
-      <div className="w-full max-w-[400px] h-full sm:h-[calc(100vh-2rem)] sm:max-h-[820px] sm:rounded-[44px] sm:border-[10px] sm:border-black sm:shadow-[0_20px_50px_rgba(0,0,0,0.12)] overflow-hidden bg-[#faf8f5] relative flex flex-col shrink-0">
+      <div className="w-full max-w-[400px] h-full sm:h-[calc(100dvh-2rem)] sm:max-h-[820px] sm:rounded-[44px] sm:border-[10px] sm:border-black sm:shadow-[0_20px_50px_rgba(0,0,0,0.12)] overflow-hidden bg-[#faf8f5] relative flex flex-col shrink-0">
         
         {/* 3. Header Bar - Fixed at top of phone frame */}
         <Navbar
